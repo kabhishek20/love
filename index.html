@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOVE CALCULATOR</title>
+
+    <link rel="shortcut icon" type="image/jpg" href="images/icon.jpg"/>
+</head>
+<style>
+    button:hover
+    {
+        background-color: red;
+        color: white;
+        font-weight: bolder;
+    }
+</style>
+
+
+<body style="background-color: rgb(243, 204, 211);">
+    <h1 style="text-align: center; background-color: rgb(241, 25, 61); color: white;padding-top: 10px;padding-bottom: 10px;">Know how much you love your crush and how much they love you..</h1>
+    
+    <p style="font-size: 18px;">
+        <b style="font-size: 25px;"><u>Procedure To be followed:</u></b><br><br>
+        (1) Type your name in the first box.<br>
+        (2) Press the button <b>Enter Name 1</b><br>
+        (3) Enter your crush name in the second box.<br>
+        (4) Press the button <b>Enter Name 2</b><br>
+        (5) Finally press the <b>Result</b> button to show how much you love each other.<br><br>
+        <b style="font-size:15px;"><u>protip </u></b>: If love is more than 70% , go and propose your crush.
+    </p>
+
+
+    <hr>
+    <hr>
+    
+    <input id="name1" type="text" style="padding: 10px; padding-right: 40px;margin-left: 30%;">
+    <button type="button" onclick="getname1()" style="padding: 10px;">ENTER NAME 1</button><br><br><br>
+    <input id="name2" type="text" style="padding: 10px; padding-right: 40px;margin-left: 30%;">
+    <button type="button" onclick="getname2()" style="padding: 10px;">ENTER NAME 2</button><br><br><br>
+    <button type="button" onclick="showresult()" style="padding: 10px;margin-left: 40%;">RESULT</button>
+
+    <hr>
+    <hr>
+    <p id="ans" style="background-color: rgb(241,25,61); color: white;font-weight: bolder;text-align: center; padding-top: 10px;padding-bottom: 10px;" >
+
+    </p>
+
+    <script>
+        var x,y,mssg,sum=0,sum1=0;
+        mssg=document.getElementById('ans');
+        mssg.innerHTML="";
+        function getname1()
+        {
+            x=document.getElementById('name1').value;
+        }
+        function getname2()
+        {
+            y=document.getElementById('name2').value;
+        }
+        function showresult()
+        {
+            for(i=0;i<x.length;i=i+1)
+            {
+                sum=sum+x.charCodeAt(i);
+            }
+            for(j=0;j<y.length;j=j+1)
+            {
+                sum1=sum1+y.charCodeAt(j);
+            }
+            if(sum<sum1)
+            {
+                mssg.innerHTML="YOUR CRUSH HAS CAPTURED "+((sum/sum1)*100).toFixed(0)+"% OF YOUR HEART";
+            }
+            else
+            {
+                mssg.innerHTML="YOUR CRUSH HAS CAPTURED "+((sum1/sum)*100).toFixed(0)+"% OF YOUR HEART";
+            }
+        }
+    </script>
+</body>
+</html>
